@@ -115,6 +115,45 @@ m_PASN_noncoding <- m_PASN %>%
   filter(category == "intergenic")
 
 
+
+#TRYYY
+
+TSB_starts_coding <- unique(m_TSB_coding$start)
+PASN_starts_coding <- unique(m_PASN_coding$start)
+
+# starts only in TSB or only in PASN (not both)
+diff_coding <- setdiff(union(TSB_starts_coding, PASN_starts_coding),
+                       intersect(TSB_starts_coding, PASN_starts_coding))
+
+# optional: full table of which group they come from
+coding_diff_table <- methylation_slim %>%
+  filter(category != "intergenic") %>%
+  filter(start %in% diff_coding) %>%
+  arrange(start)
+
+# Compare noncoding
+TSB_starts_noncoding <- unique(m_TSB_noncoding$start)
+PASN_starts_noncoding <- unique(m_PASN_noncoding$start)
+
+diff_noncoding <- setdiff(union(TSB_starts_noncoding, PASN_starts_noncoding),
+                          intersect(TSB_starts_noncoding, PASN_starts_noncoding))
+
+noncoding_diff_table <- methylation_slim %>%
+  filter(category == "intergenic") %>%
+  filter(start %in% diff_noncoding) %>%
+  arrange(start)
+
+# Results
+list(
+  coding_differences = coding_diff_table,
+  noncoding_differences = noncoding_diff_table
+)
+
+
+
+
+
+
 # Task0: show distribution along the chromosome
 
 # visualize data as density on the chromosome with start as position
