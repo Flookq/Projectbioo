@@ -13,7 +13,6 @@ library(pheatmap)
 library(rtracklayer)
 
 
-
 # globals
 project <- "Bio253"
 dateToday <- format(Sys.Date(), "%Y%m%d")
