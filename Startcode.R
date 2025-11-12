@@ -98,6 +98,14 @@ m_TSB <- methylation_slim %>%
 m_PASN <- methylation_slim %>%
   filter(treatment == "PASN")
 
+#further divided mTSB into coding and non-coding
+
+m_TSB_coding <- m_TSB %>%
+  filter(category != "intergenic")
+
+m_TSB_noncoding <- m_TSB %>%
+  filter(category == "intergenic")
+
 
 # Task0: show distribution along the chromosome
 
