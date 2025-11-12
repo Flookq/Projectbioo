@@ -329,6 +329,9 @@ mygffdf_slim_protein <- mygffdf %>%
 # find genes in regions of peaks and gaps for StringDB enrichment?
 
 # In peak regions
+
+source("~/Uni/3. Jahr/5. Semester/Blockkurs 3/Bio253_SA6850_Research_in_Omics_HS2025-main/Bio253_SA6850_Research_in_Omics_HS2025-main/Rscripts/HelperFunctions.R")
+
 my_top_10_bins <- methylation_binned_condition[order(methylation_binned_condition$TSBnPASN, decreasing = TRUE)[1:10],]
 features_in_top10_bins_protein <- find_overlapping_features(my_top_10_bins, mygffdf_slim_protein)
 features_in_top10_bins_genes <- find_overlapping_features(my_top_10_bins, mygffdf_slim_gene)
@@ -338,9 +341,15 @@ features_in_top10_bins_genes <- find_overlapping_features(my_top_10_bins, mygffd
 
 # spacing regions of interest
 SpacingCutoff <- 10000  # 10kb
+
+methylation_withDiffs <- methylation_data_with_diff %>%
+  arrange(desc(diff_to_next_site)) %>%
+  mutate(hypoMethRegion_end = start + diff_to_next_site)
+
 largest_diff_AllStrand_ofInterest <- methylation_withDiffs %>%
-  filter(diff > SpacingCutoff) %>%
-  select(start, hypoMethRegion_end, diff, strand, feature)
+  filter(diff_to_next_site > SpacingCutoff) %>%
+  select(start, hypoMethRegion_end, diff_to_next_site, strand, feature)
+
 
 
 # Find genes overlapping with hypo-methylated regions
