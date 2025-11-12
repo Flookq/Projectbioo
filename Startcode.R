@@ -405,7 +405,7 @@ ggplot() +
 
 
 
-# screen "back-ground" (DNA) for known (degenerated) motifs of methylation
+# screen "back-ground" (DNA) for known (degenerated) motifs of methylatio
 
 
 
