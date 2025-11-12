@@ -12,8 +12,6 @@ library(ggplot2)
 library(pheatmap)
 library(rtracklayer)
 
-sdfkdfhksa jfsjlf
-
 
 # globals
 project <- "Bio253"
