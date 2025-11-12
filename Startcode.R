@@ -12,6 +12,7 @@ library(ggplot2)
 library(pheatmap)
 library(rtracklayer)
 
+added text 
 
 # globals
 project <- "Bio253"
