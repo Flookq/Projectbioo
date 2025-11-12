@@ -408,6 +408,9 @@ ggplot() +
 # screen "back-ground" (DNA) for known (degenerated) motifs of methylatio
 
 
+library(usethis)
+
+use_github()
 
 
 
