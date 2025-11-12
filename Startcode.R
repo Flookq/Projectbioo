@@ -77,7 +77,8 @@ table(mtX_wPrX$feature)
 # filter the data for the specific clone and condition
 mtX_wPrX_OfInterest <- mtX_wPrX %>%
   filter(feature == featureOfInterest) %>%
-  filter(IPDRatio > IPDrThreshold)
+  filter(IPDRatio > IPDrThreshold) %>%
+  filter(group == 6850)
 
 
 table(mtX_wPrX_OfInterest$feature)
