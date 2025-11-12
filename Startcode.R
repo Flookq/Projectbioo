@@ -7,10 +7,12 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(dplyr)
-library(IRanges)
+library(IRanges)https://rdocumentation.org/packages/IRanges/versions/2.6.1
 library(ggplot2)
 library(pheatmap)
 library(rtracklayer)
+library(tidyverse)
+
 
 
 # globals
