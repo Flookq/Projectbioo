@@ -7,7 +7,7 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(dplyr)
-library(IRanges)https://rdocumentation.org/packages/IRanges/versions/2.6.1
+library(IRanges)
 library(ggplot2)
 library(pheatmap)
 library(rtracklayer)
