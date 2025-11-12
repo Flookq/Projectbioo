@@ -106,6 +106,14 @@ m_TSB_coding <- m_TSB %>%
 m_TSB_noncoding <- m_TSB %>%
   filter(category == "intergenic")
 
+#further divided mPSN into coding and non-coding
+
+m_PASN_coding <- m_PASN %>%
+  filter(category != "intergenic")
+
+m_PASN_noncoding <- m_PASN %>%
+  filter(category == "intergenic")
+
 
 # Task0: show distribution along the chromosome
 
