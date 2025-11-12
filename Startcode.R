@@ -87,8 +87,9 @@ table(mtX_wPrX_OfInterest$group, mtX_wPrX_OfInterest$treatment)
 
 
 # slim it down to better visualize
-methylation_slim <- mtX_wPrX_OfInterest %>% select(start, strand, feature, motif, group, treatment) |> distinct()
+methylation_slim <- mtX_wPrX_OfInterest %>% select(start, strand, feature, motif, group, treatment, gene_end, gene_start, ID, category, proteinID, description.x, Description, KEGG_Pathway) |> distinct()
 table(methylation_slim$group, methylation_slim$treatment)
+
 
 
 # Task0: show distribution along the chromosome
