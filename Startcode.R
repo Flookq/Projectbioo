@@ -90,6 +90,13 @@ table(mtX_wPrX_OfInterest$group, mtX_wPrX_OfInterest$treatment)
 methylation_slim <- mtX_wPrX_OfInterest %>% select(start, strand, feature, motif, group, treatment, gene_end, gene_start, ID, category, proteinID, description.x, Description, KEGG_Pathway) |> distinct()
 table(methylation_slim$group, methylation_slim$treatment)
 
+#slimed methylation, divided into TSB and PSN
+
+m_TSB <- methylation_slim %>%
+  filter(treatment == "TSB")
+
+m_PASN <- methylation_slim %>%
+  filter(treatment == "PASN")
 
 
 # Task0: show distribution along the chromosome
