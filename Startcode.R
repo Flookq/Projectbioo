@@ -64,7 +64,7 @@ dev.off()
 
 
 # globals
-IPDrThreshold <- 2.8
+IPDrThreshold <- 2.7
 featureOfInterest <- "m6A"
 
 # join mtX 2 prX
@@ -74,8 +74,8 @@ table(mtX_wPrX$feature)
 
 # filter the data for the specific clone and condition
 mtX_wPrX_OfInterest <- mtX_wPrX %>%
-  filter(feature != "modified_base")
-  filter(IPDRatio > IPDrThreshold) %>%
+  filter(feature != "modified_base")%>%
+  filter(IPDRatio > IPDrThreshold)
 
 
 table(mtX_wPrX_OfInterest$feature)
