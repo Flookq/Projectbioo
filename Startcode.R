@@ -7,10 +7,8 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(dplyr)
-library(IRanges)
 library(ggplot2)
 library(pheatmap)
-library(rtracklayer)
 library(tidyverse)
 
 
